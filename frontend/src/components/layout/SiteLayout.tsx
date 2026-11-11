@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { LuArrowUpRight } from 'react-icons/lu'
 import { ClinicLogo } from '../brand/ClinicLogo'
 import { FacebookLink } from '../ui/FacebookLink'
 import { InstagramLink } from '../ui/InstagramLink'
@@ -49,7 +50,7 @@ export function SiteLayout() {
             </NavLink>
           ))}
         </nav>
-        <NavLink className="site-header__cta" to="/contact" onClick={() => setMenuOpen(false)}>Book a visit <span aria-hidden="true">↗</span></NavLink>
+        <NavLink className="site-header__cta" to="/contact" onClick={() => setMenuOpen(false)}>Book a visit <LuArrowUpRight className="site-header__cta-icon" aria-hidden="true" /></NavLink>
       </header>
 
       {menuOpen && <button className="site-nav-backdrop" type="button" aria-label="Close navigation menu" onClick={() => setMenuOpen(false)} />}

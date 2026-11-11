@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ClinicLogo } from '../brand/ClinicLogo'
+import { LuArrowRight, LuArrowUpRight, LuHeart, LuImagePlus, LuSparkles } from 'react-icons/lu'
 import { clinic } from '../../data/clinic'
 
 const strengths = [
@@ -43,19 +43,18 @@ export function HeroSection() {
   return (
     <section className="home-hero home-hero--original" aria-labelledby="home-title">
       <div className="home-hero__copy">
-        <div className="home-hero__mini-brand"><ClinicLogo /></div>
         <p className="eyebrow"><span /> YOUR NEIGHBOURHOOD DENTAL CLINIC</p>
         <h1 id="home-title">A little care.<br />A lot more <em>confidence.</em></h1>
         <p className="home-hero__description">We believe every smile deserves thoughtful care. Feel at ease, feel heard, and leave a little more confident.</p>
         <div className="home-hero__actions">
-          <Link className="button button--primary" to="/contact">Plan your visit <span aria-hidden="true">↗</span></Link>
-          <Link className="button button--text" to="/services">Explore our care <span aria-hidden="true">→</span></Link>
+          <Link className="button button--primary" to="/contact">Plan your visit <LuArrowUpRight className="button__icon" aria-hidden="true" /></Link>
+          <Link className="button button--text" to="/services">Explore our care <LuArrowRight className="button__icon" aria-hidden="true" /></Link>
         </div>
-        <div className="home-hero__note"><span className="home-hero__note-icon" aria-hidden="true">✳</span><span>Made for your comfort<br /><strong>At every appointment</strong></span></div>
+        <div className="home-hero__note"><span className="home-hero__note-icon" aria-hidden="true"><LuHeart /></span><span>Made for your comfort<br /><strong>At every appointment</strong></span></div>
       </div>
       <div className="home-hero__visual" aria-label="iSmile Dental Care brand illustration" role="img">
         <div className="home-hero__wash" />
-        <span className="sparkle sparkle--one" aria-hidden="true">✦</span><span className="sparkle sparkle--two" aria-hidden="true">✧</span><span className="sparkle sparkle--three" aria-hidden="true">✦</span>
+        <span className="sparkle sparkle--one" aria-hidden="true"><LuSparkles /></span><span className="sparkle sparkle--two" aria-hidden="true"><LuSparkles /></span><span className="sparkle sparkle--three" aria-hidden="true"><LuSparkles /></span>
         <div className="home-hero__poster">
           <span className="poster-kicker">A HEALTHIER SMILE STARTS HERE</span>
           <span className="poster-title">Feel good<br />about your <em>smile.</em></span>
@@ -80,7 +79,7 @@ export function WhyDentalCareSection() {
         <p>Oral health is part of your overall wellbeing. Regular dental care can help you keep your teeth and gums healthy, spot concerns, and get advice that fits your needs.</p>
         <p>Small, consistent steps today can make caring for your smile feel easier over time.</p>
       </div>
-      <div className="care-matters__seal" aria-hidden="true"><span>CARE FOR<br />YOUR SMILE</span><i>✳</i></div>
+      <div className="care-matters__seal" aria-hidden="true"><span>CARE FOR<br />YOUR SMILE</span><LuSparkles /></div>
       <div className="care-matters__benefits">
         {careBenefits.map((benefit) => <article className="care-benefit" key={benefit.number}><span className="care-benefit__number">{benefit.number}</span><h3>{benefit.title}</h3><p>{benefit.description}</p></article>)}
       </div>
@@ -96,7 +95,7 @@ export function WhyChooseSection() {
         <p>Your comfort and care guide every conversation, recommendation, and visit.</p>
       </div>
       <div className="strength-grid">
-        {strengths.map((strength) => <article className="strength-card" key={strength.number}><span className="strength-card__number">{strength.number}</span><span className="strength-card__sparkle" aria-hidden="true">✦</span><h3>{strength.title}</h3><p>{strength.description}</p></article>)}
+        {strengths.map((strength) => <article className="strength-card" key={strength.number}><span className="strength-card__number">{strength.number}</span><span className="strength-card__sparkle" aria-hidden="true"><LuSparkles /></span><h3>{strength.title}</h3><p>{strength.description}</p></article>)}
       </div>
     </section>
   )
@@ -108,8 +107,8 @@ export function SmilePrioritySection() {
       <div className="smile-priority__visual" role="img" aria-label="Illustration of iSmile's patient-first approach">
         <span className="priority-orbit priority-orbit--outer" />
         <span className="priority-orbit priority-orbit--inner" />
-        <span className="priority-sparkle priority-sparkle--one" aria-hidden="true">✦</span>
-        <span className="priority-sparkle priority-sparkle--two" aria-hidden="true">✧</span>
+        <span className="priority-sparkle priority-sparkle--one" aria-hidden="true"><LuSparkles /></span>
+        <span className="priority-sparkle priority-sparkle--two" aria-hidden="true"><LuSparkles /></span>
         <svg className="priority-tooth" viewBox="0 0 220 250" aria-hidden="true">
           <path d="M48 23C22 30 15 59 25 91c9 27 18 83 36 120 6 13 19 14 27 1l15-28c4-8 10-8 14 0l15 28c8 14 21 12 27-1 18-37 27-93 36-120 10-32 3-61-23-68-22-6-37 12-59 12S70 17 48 23Z" />
           <path d="M82 125c15 17 41 17 56 0" />
@@ -118,7 +117,7 @@ export function SmilePrioritySection() {
         <span className="priority-note priority-note--two"><i>02</i> We explain</span>
         <span className="priority-note priority-note--three"><i>03</i> You decide</span>
       </div>
-      <div className="smile-priority__copy"><span className="section-kicker">YOUR SMILE, OUR PRIORITY</span><h2 id="smile-priority-title">Care that starts<br />with <em>listening.</em></h2><p>We want you to feel heard and informed. We take time to understand your concerns, explain your options in clear language, and support you in making decisions about your dental care.</p><Link className="button button--outline" to="/services">Explore our care <span aria-hidden="true">↗</span></Link></div>
+      <div className="smile-priority__copy"><span className="section-kicker">YOUR SMILE, OUR PRIORITY</span><h2 id="smile-priority-title">Care that starts<br />with <em>listening.</em></h2><p>We want you to feel heard and informed. We take time to understand your concerns, explain your options in clear language, and support you in making decisions about your dental care.</p><Link className="button button--outline" to="/services">Explore our care <LuArrowUpRight className="button__icon" aria-hidden="true" /></Link></div>
     </section>
   )
 }
@@ -131,8 +130,8 @@ export function SmileGallerySection() {
         {treatmentSlots.map((slot) => <article className="treatment-card" key={slot} aria-label={`Treatment transformation photo slot ${slot}`}>
           <span className="treatment-card__number">CASE {slot}</span>
           <div className="treatment-card__images">
-            <div className="treatment-placeholder"><span aria-hidden="true">✳</span><small>BEFORE</small></div>
-            <div className="treatment-placeholder treatment-placeholder--after"><span aria-hidden="true">✦</span><small>AFTER</small></div>
+            <div className="treatment-placeholder"><LuImagePlus className="treatment-placeholder__icon" aria-hidden="true" /><small>BEFORE</small></div>
+            <div className="treatment-placeholder treatment-placeholder--after"><LuImagePlus className="treatment-placeholder__icon" aria-hidden="true" /><small>AFTER</small></div>
           </div>
           <p>Patient photo space · shared with consent</p>
         </article>)}
@@ -169,8 +168,8 @@ export function BookVisitSection() {
   return (
     <section className="book-visit" aria-labelledby="book-visit-title">
       <div><span className="section-kicker">READY WHEN YOU ARE</span><h2 id="book-visit-title">Let’s make time<br />for your <em>smile.</em></h2><p>Reach out to iSmile Dental Care to plan your visit.</p></div>
-      <Link className="button button--light" to="/contact">Book your visit <span aria-hidden="true">↗</span></Link>
-      <span className="book-visit__sparkle" aria-hidden="true">✦</span>
+      <Link className="button button--light" to="/contact">Book your visit <LuArrowUpRight className="button__icon" aria-hidden="true" /></Link>
+      <span className="book-visit__sparkle" aria-hidden="true"><LuSparkles /></span>
       <span className="book-visit__clinic">{clinic.name} · Siliguri</span>
     </section>
   )

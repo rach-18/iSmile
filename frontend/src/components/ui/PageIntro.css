@@ -1,0 +1,5 @@
+.page-intro { max-width: 710px; padding: 76px 0 46px; }
+.page-intro h1 { margin: 16px 0; color: var(--ink); font-family: var(--serif); font-size: clamp(46px, 6vw, 72px); font-weight: 400; letter-spacing: -2.5px; line-height: 1.06; }
+.page-intro h1 em { color: var(--purple-bright); font-weight: 400; }
+.page-intro p { max-width: 515px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+@media (max-width: 620px) { .page-intro { padding: 44px 0 27px; }.page-intro h1 { font-size: 51px; } }

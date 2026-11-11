@@ -1,0 +1,8 @@
+.clinic-logo { display: inline-flex; width: 142px; align-items: center; }
+.clinic-logo img { display: block; width: 100%; height: auto; }
+.site-footer .clinic-logo { width: 114px; }
+.home-hero__mini-brand .clinic-logo { width: 142px; }
+@media (max-width: 720px) {
+  .site-header .clinic-logo { width: 125px; }
+  .site-footer .clinic-logo { width: 98px; }
+}

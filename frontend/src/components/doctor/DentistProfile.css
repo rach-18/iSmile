@@ -1,0 +1,23 @@
+.dentist-profile { display: grid; grid-template-columns: minmax(240px, .8fr) 1.2fr; align-items: center; gap: clamp(28px, 6vw, 75px); padding: 35px; background: #f6f2fa; }
+.dentist-profile--photo-right { grid-template-columns: 1.2fr minmax(240px, .8fr); grid-template-areas: "copy portrait"; }
+.dentist-profile--photo-right .dentist-profile__portrait { grid-area: portrait; }
+.dentist-profile--photo-right .dentist-profile__copy { grid-area: copy; }
+.dentist-profile__portrait { position: relative; min-height: 380px; overflow: hidden; background: #e8e0f1; }
+.dentist-profile__portrait img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center 33%; }
+.dentist-profile__fallback { display: flex; height: 100%; min-height: 380px; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #806ba6; }
+.dentist-profile__fallback span { font-family: var(--serif); font-size: 105px; font-style: italic; }.dentist-profile__fallback small { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+.dentist-profile__copy h2 { margin: 10px 0 0; color: var(--ink); font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); font-weight: 400; line-height: 1.1; }
+.dentist-profile__designation { display: inline-flex; align-items: center; gap: 8px; margin-top: 9px; padding: 6px 10px; border-left: 2px solid var(--lavender); background: #fff; color: var(--purple); font-size: 10px; font-weight: 700; letter-spacing: 1.1px; }
+.dentist-profile__designation > span { width: 5px; height: 5px; border-radius: 50%; background: var(--lavender); }
+.dentist-profile__designation--placeholder { border: 1px dashed #cfc4dd; background: #fbf9fd; color: #81798f; font-weight: 500; letter-spacing: .5px; }
+.dentist-profile__designation--placeholder > span { background: #b9a8ce; }
+.dentist-profile__copy > p { max-width: 430px; margin: 18px 0 0; color: var(--muted); font-size: 12px; line-height: 1.9; }
+.dentist-profile__details { margin-top: 18px; color: #8a8498 !important; font-size: 10px !important; }
+.dentist-profile__link { display: inline-flex; gap: 12px; margin-top: 7px; color: var(--purple); font-size: 11px; font-weight: 600; }.dentist-profile__link span { color: var(--purple-bright); }
+.dentist-profile--compact { grid-template-columns: 170px 1fr; gap: 28px; padding: 20px; background: #f6f2fa; }
+.dentist-profile--compact .dentist-profile__portrait { min-height: 175px; }.dentist-profile--compact .dentist-profile__fallback { min-height: 175px; }.dentist-profile--compact .dentist-profile__fallback span { font-size: 65px; }
+.dentist-profile--compact .dentist-profile__copy h2 { margin-top: 7px; font-size: 26px; }.dentist-profile--compact .dentist-profile__designation { gap: 6px; margin-top: 6px; padding: 4px 7px; font-size: 8px; letter-spacing: .8px; }.dentist-profile--compact .dentist-profile__copy > p { margin-top: 9px; font-size: 10px; }.dentist-profile--compact .dentist-profile__link { margin-top: 12px; font-size: 10px; }
+@media (max-width: 680px) {
+  .dentist-profile { grid-template-columns: 1fr; gap: 20px; padding: 18px; }.dentist-profile--photo-right { grid-template-columns: 1fr; grid-template-areas: "portrait" "copy"; }.dentist-profile__portrait, .dentist-profile__fallback { min-height: min(110vw, 380px); max-height: 450px; }.dentist-profile__copy h2 { font-size: 34px; }
+  .dentist-profile--compact { grid-template-columns: 95px 1fr; gap: 14px; padding: 14px; }.dentist-profile--compact .dentist-profile__portrait, .dentist-profile--compact .dentist-profile__fallback { min-height: 125px; }.dentist-profile--compact .dentist-profile__fallback span { font-size: 52px; }.dentist-profile--compact .dentist-profile__fallback small { font-size: 6px; }.dentist-profile--compact .dentist-profile__copy h2 { font-size: 21px; }.dentist-profile--compact .dentist-profile__copy > p { font-size: 9px; line-height: 1.55; }.dentist-profile--compact .section-kicker { font-size: 8px; }
+}

@@ -7,6 +7,9 @@ type DentistProfileProps = {
   designation?: string;
   portraitSrc?: string;
   introduction?: string;
+  specialisation?: string;
+  experience?: string;
+  expertise?: string[];
   compact?: boolean;
   photoOnRight?: boolean;
 };
@@ -16,6 +19,9 @@ export function DentistProfile({
   designation,
   portraitSrc,
   introduction,
+  specialisation,
+  experience,
+  expertise,
   compact = false,
   photoOnRight = false,
 }: DentistProfileProps) {
@@ -58,6 +64,13 @@ export function DentistProfile({
         </div>
         {introduction && <p>{introduction}</p>}
         {!introduction && !compact && <p className="dentist-profile__pending">Profile introduction will be added soon.</p>}
+        {(specialisation || experience || expertise?.length) && (
+          <div className="dentist-profile__professional-details">
+            {specialisation && <p><strong>Specialisation</strong><span>{specialisation}</span></p>}
+            {experience && <p><strong>Experience</strong><span>{experience}</span></p>}
+            {expertise?.length ? <p className="dentist-profile__expertise"><strong>Areas of expertise</strong><span>{expertise.join(' · ')}</span></p> : null}
+          </div>
+        )}
         {compact && (
           <Link to="/about" className="dentist-profile__link">
             Meet your dentist <span aria-hidden="true">↗</span>
